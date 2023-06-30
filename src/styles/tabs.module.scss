@@ -1,0 +1,48 @@
+$nav-background: #f8fafd;
+$nav-active: #c2e7ff;
+$nav-link-active-color: #001d35;
+$nav-border-radius: 20px;
+$nav-link-color: #444746;
+
+@mixin navFlex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav {
+    justify-content: center;
+    margin: 30px 20px;
+    @include navFlex()
+}
+
+.navbar {
+    max-width: 600px;
+    width: 100%;
+}
+
+.navContent {
+    min-height: 60px;
+    width: 100%;
+    justify-content: space-around;
+    border-radius: $nav-border-radius;
+    background-color: $nav-background;
+    @include navFlex()
+}
+
+.navLink {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px 40px;
+    min-width: 150px;
+    justify-content: center;
+    color: $nav-link-color;
+    border-radius: $nav-border-radius;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #e3e3e3;
+    }
+
+    @include navFlex()
+}

@@ -1,0 +1,76 @@
+$light-bg: #fafafa;
+$light-border: #ddd;
+$sm: "screen and (min-width: 600px)";
+$xs: "screen and (max-width: 599px)";
+
+.responsiveTabel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead {
+        visibility: hidden;
+        background: $light-bg;
+
+        @media screen and (min-width: 600px) {
+            visibility: visible;
+        }
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        text-transform: uppercase;
+        font-size: 11px;
+    }
+
+    tr {
+        display: block;
+        border: 1px solid $light-border;
+        border-bottom: 2px solid $light-border;
+        padding: 5px;
+        margin-bottom: 10px;
+
+        @media screen and (min-width: 600px) {
+            display: table-row;
+        }
+    }
+
+    td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted $light-border;
+
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 10px;
+        }
+
+        &::before {
+            content: attr(data-tabel);
+            float: left;
+            text-transform: uppercase;
+            font-weight: bold;
+
+            @media screen and (min-width: 600px) {
+                content: "";
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            display: table-cell;
+            text-align: left;
+            font-size: 14px;
+            border-bottom: none;
+        }
+    }
+
+}
