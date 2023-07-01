@@ -1,20 +1,33 @@
 .action {
     position: relative;
-}
 
-.edit {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 5px 20px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, .05);
-    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .18);
+    .edit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px 20px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, .05);
+        box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .18);
 
-    &:hover {
-        cursor: pointer;
+        @media screen and (max-width: 600px) {
+            & {
+                left: -40px;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        & {
+            float: right;
+        }
     }
 }
+
 
 .updateModalContainer {
     position: fixed;
@@ -95,13 +108,23 @@
             margin-right: 25px;
         }
     }
-    
+
     .cancelButton {
         color: #0B57D0;
         background-color: #fff;
+
+        &:hover {
+            background-color: #f8fafd;
+        }
     }
+
     .saveButton {
         background-color: #0B57D0;
         color: #fff;
+
+        &:hover {
+            background-color: #09419b;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+        }
     }
 }

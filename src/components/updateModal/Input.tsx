@@ -16,6 +16,9 @@ function Input({ data, reason, cancelEditHandler, formUpdate, handleCreate }: Ii
         name: data.name,
         description: data.description
     })
+    const saveButtonStyle: React.CSSProperties = reason === 'create' ? {
+        marginRight: "20%"
+    } : {}
 
     function updateInputDataName(e: React.ChangeEvent<HTMLInputElement>) {
         e.preventDefault()
@@ -68,7 +71,7 @@ function Input({ data, reason, cancelEditHandler, formUpdate, handleCreate }: Ii
                 </div>
             </div>
             <div className={style.buttons}>
-                <button className={style.saveButton} type="submit">Confirm</button>
+                <button className={style.saveButton} style={saveButtonStyle} type="submit">Confirm</button>
                 <button className={style.cancelButton} onClick={() => handleCancel()}>Cancel</button>
             </div>
         </form>

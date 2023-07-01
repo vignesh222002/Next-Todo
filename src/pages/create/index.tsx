@@ -26,6 +26,7 @@ function CreatePage() {
 
   return (
     <div>
+      <div className={style.head}>Create Todo</div>
       <Input data={data} reason={reason} cancelEditHandler={() => { }} formUpdate={() => { }} handleCreate={handleCreate} />
     </div>
   )
