@@ -10,11 +10,11 @@ export type ITabel = {
 
 function TabelHead({ tabelHead }: ITabel) {
     const keys = Object.keys(tabelHead)
-    console.log("tabel head keys: ", keys)
+    // console.log("tabel head keys: ", keys)
 
     return (
         <tr>
-            {keys.map((key: string) => <th>{key}</th>)}
+            {keys.map((key: string, index) => <th key={index}>{key}</th>)}
             <th>Action</th>
         </tr>
     )

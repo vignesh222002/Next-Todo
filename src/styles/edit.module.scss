@@ -1,0 +1,107 @@
+.action {
+    position: relative;
+}
+
+.edit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 20px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .18);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.updateModalContainer {
+    position: fixed;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 12;
+    transition: opacity .2s;
+
+    .updateModal {
+        width: 400px;
+        min-height: 300px;
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+        background-color: #fff;
+        border-radius: 5px;
+
+        .modalHead {
+            color: rgb(33, 68, 223);
+            text-align: center;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+    }
+}
+
+// Inputs
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        margin: 20px auto;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: darkblue;
+            font-weight: 600;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+            font-size: 16px;
+            color: blue;
+        }
+    }
+}
+
+.buttons {
+    margin-top: 20px;
+
+    button {
+        border: none;
+        outline: none;
+        float: right;
+        font-size: 15px;
+        margin-right: 10px;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+
+        &:first-child {
+            margin-right: 25px;
+        }
+    }
+    
+    .cancelButton {
+        color: #0B57D0;
+        background-color: #fff;
+    }
+    .saveButton {
+        background-color: #0B57D0;
+        color: #fff;
+    }
+}

@@ -13,7 +13,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  font-family: sans-serif;
+  font-family: "Google Sans Text", "Google Sans", Roboto, Arial, sans-serif;
 }
 
 a {
