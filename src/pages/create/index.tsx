@@ -4,6 +4,8 @@ import React, { useContext } from 'react'
 import style from '../../styles/create.module.scss'
 import Input from '@/components/updateModal/Input'
 import { useRouter } from 'next/router'
+import { createToast } from '@/components/Layout'
+import { loader } from '@/utils'
 
 function CreatePage() {
   const context = useContext(Data)
@@ -15,11 +17,18 @@ function CreatePage() {
     description: ""
   }
 
-  function handleCreate(data: Idata) {
+  async function handleCreate(data: Idata) {
     if (data.name && data.description) {
+      await loader(context.setLoading)
+
       const prevData = context.data
       prevData.push(data)
       context.setData(prevData)
+
+      // Toast Animation
+      setTimeout(() => {
+        createToast('Todo Created Sucessfully')
+      }, 2000);
       router.push('/list')
     }
   }

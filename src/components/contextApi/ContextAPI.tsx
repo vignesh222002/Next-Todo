@@ -12,15 +12,20 @@ export type ContextType = {
     id: number;
     name: string;
     description: string;
-  }[]>>;
+  }[]>>,
+  loading: boolean,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const Data = React.createContext<ContextType>({
   data: [{ id: 1, name: "", description: "" }],
   setData: ()=>{},
+  loading: false,
+  setLoading: ()=>{}
 })
 
 function ContextApi({ children }: IChildren) {
+  const [loading, setLoading] = useState<boolean>(false)
   const [data, setData] = useState<IData[]>([
     {
       id: 1,
@@ -41,7 +46,7 @@ function ContextApi({ children }: IChildren) {
 
 
   return (
-    <Data.Provider value={{ data, setData }}>
+    <Data.Provider value={{ data, setData, loading, setLoading }}>
       {children}
     </Data.Provider>
   )

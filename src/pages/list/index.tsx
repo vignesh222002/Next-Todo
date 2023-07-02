@@ -4,6 +4,8 @@ import TabelRows, { Idata } from '@/components/tabel/TabelRows'
 import React, { useContext, useEffect, useState } from 'react'
 import style from '../../styles/tabel.module.scss'
 import UpdateModal from '@/components/updateModal/UpdateModal'
+import { createToast } from '@/components/Layout'
+import { loader } from '@/utils'
 
 function ListPage() {
   const context: ContextType = useContext(Data)
@@ -19,13 +21,19 @@ function ListPage() {
     setUpdatePopup(false)
     setUpdateData(null)
   }
-  function formUpdate(data: Idata) {
+  async function formUpdate(data: Idata) {
+    await loader(context.setLoading)
+
     let pos = data.id - 1
     let prevData = context.data
     prevData[pos] = data
     context.setData(prevData)
-    
-    // Animation and Toast
+
+    // Toast
+
+    setTimeout(() => {
+      createToast('Todo Updated Sucessfully')
+    }, 2000);
     setUpdatePopup(false)
     setUpdateData(null)
   }

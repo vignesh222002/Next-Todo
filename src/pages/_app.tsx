@@ -5,10 +5,10 @@ import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <ContextApi>
+    <ContextApi>
+      <Layout>
         <Component {...pageProps} />
-      </ContextApi>
-    </Layout>
+      </Layout>
+    </ContextApi>
   )
 }
