@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from '../styles/tabs.module.scss'
 import { useRouter } from 'next/router'
-import { tabChooser } from '@/utils'
+import { tabChooser } from '@/utils/helper'
 
 function Tabs() {
     const [active, setActive] = useState("")

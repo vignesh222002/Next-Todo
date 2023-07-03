@@ -1,11 +1,11 @@
 import { Data } from '@/components/contextApi/ContextAPI'
-import { Idata } from '@/components/tabel/TabelRows'
 import React, { useContext } from 'react'
 import style from '../../styles/create.module.scss'
 import Input from '@/components/updateModal/Input'
 import { useRouter } from 'next/router'
 import { createToast } from '@/components/Layout'
-import { loader } from '@/utils'
+import { Idata } from '@/utils/types'
+import { loader } from '@/utils/helper'
 
 function CreatePage() {
   const context = useContext(Data)

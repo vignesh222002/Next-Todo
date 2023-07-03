@@ -1,11 +1,12 @@
-import { ContextType, Data } from '@/components/contextApi/ContextAPI'
+import { Data } from '@/components/contextApi/ContextAPI'
 import TabelHead from '@/components/tabel/TabelHead'
-import TabelRows, { Idata } from '@/components/tabel/TabelRows'
+import TabelRows from '@/components/tabel/TabelRows'
 import React, { useContext, useEffect, useState } from 'react'
 import style from '../../styles/tabel.module.scss'
 import UpdateModal from '@/components/updateModal/UpdateModal'
 import { createToast } from '@/components/Layout'
-import { loader } from '@/utils'
+import { ContextType, Idata } from '@/utils/types'
+import { loader } from '@/utils/helper'
 
 function ListPage() {
   const context: ContextType = useContext(Data)

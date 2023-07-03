@@ -1,16 +1,6 @@
 import React, { Fragment, memo } from 'react'
 import style from '../styles/edit.module.scss'
-import { Idata } from './tabel/TabelRows'
-
-
-type IconType = {
-    data: Idata,
-    editIconActive: boolean,
-    editPopup: number | null,
-    handler1: (id: number) => void,
-    handler2: () => void,
-    editClick: (data: Idata) => void
-}
+import { IconType } from '@/utils/types'
 
 function Icon({ editIconActive, editPopup, handler1, handler2, data, editClick }: IconType) {
     return (

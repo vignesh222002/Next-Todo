@@ -1,12 +1,5 @@
+import { ITabel } from '@/utils/types'
 import React from 'react'
-
-export type ITabel = {
-    tabelHead: {
-        id: number,
-        name: string,
-        description: string
-    }
-}
 
 function TabelHead({ tabelHead }: ITabel) {
     const keys = Object.keys(tabelHead)

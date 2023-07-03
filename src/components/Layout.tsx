@@ -1,4 +1,4 @@
-import React, { Fragment, memo, useContext, useEffect, useState } from 'react'
+import React, { Fragment, memo, useContext } from 'react'
 import HeadTodo from './HeadTodo'
 import Tabs from './Tabs'
 import { useRouter } from 'next/router'
@@ -7,10 +7,7 @@ import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { PulseLoader } from 'react-spinners';
 import { Data } from './contextApi/ContextAPI';
-
-interface ILayout {
-    children: JSX.Element
-}
+import { IChildren } from '@/utils/types';
 
 export const createToast = (val: string) => {
     console.log("Toast Achieved")
@@ -27,7 +24,7 @@ export const createToast = (val: string) => {
     })
 }
 
-function Layout({ children }: ILayout) {
+function Layout({ children }: IChildren) {
     const { loading } = useContext(Data)
     const route = useRouter()
     const loadingStyle: React.CSSProperties = {

@@ -1,20 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Icon from '../Icon'
-import UpdateModal from '../updateModal/UpdateModal'
-
-export type ITabelData = {
-  tabel: {
-    id: number,
-    name: string,
-    description: string,
-  }[],
-  editClick: (data: Idata) => void
-}
-export type Idata = {
-  id: number;
-  name: string;
-  description: string;
-}
+import { ITabelData } from '@/utils/types'
 
 function TabelRows({ tabel, editClick }: ITabelData) {
   const [editIconActive, setEditIconActive] = useState<boolean>(false)
