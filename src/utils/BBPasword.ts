@@ -1,1 +1,1 @@
-const password = "ATBBKrkXTzQKg5KQXGbFWQdfQBZmE9634D36"
+const password = ""
