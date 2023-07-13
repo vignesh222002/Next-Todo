@@ -3,14 +3,22 @@ import HeadTodo from './HeadTodo'
 import Tabs from './Tabs'
 import { useRouter } from 'next/router'
 
+// Toaster
+
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+// Loader
+
 import { PulseLoader } from 'react-spinners';
+
+// Data
+
 import { Data } from './contextApi/ContextAPI';
 import { IChildren } from '@/utils/types';
 
 export const createToast = (val: string) => {
-    console.log("Toast Achieved")
+    // console.log("Toast Achieved")
     toast.success(val, {
         position: "bottom-center",
         autoClose: 2000,
